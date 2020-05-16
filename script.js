@@ -33,18 +33,18 @@ function createGrid (gridSize) {
         pixels[i] = document.createElement("div");
         pixels[i].style.backgroundColor = "#fff";
         pixels[i].dataset.darkness = "0";
-
-        console.log(pixels[i].dataset.darkness);
+        pixels[i].dataset.saturation = "0";
 
         pixels[i].addEventListener("mouseenter", function (event){
     
             let hue = Math.ceil(Math.random()*360);
-            let saturation = Math.ceil(Math.random()*100);
-            let light = 99 - event.target.dataset.darkness;
+            let saturation = Math.ceil(Math.random()*10) + event.target.dataset.saturation;
+            let light = 90 - event.target.dataset.darkness;
             
             console.log(event.target.dataset.darkness);
             event.target.style.backgroundColor = `hsl(${hue}, ${saturation}%, ${light}%)`;
             event.target.dataset.darkness = Number(event.target.dataset.darkness) + 10;
+            event.target.dataset.saturation = Number(event.target.dataset.saturation) + 10;
         });
     
         container.appendChild(pixels[i]);
