@@ -5,16 +5,19 @@ const container = document.querySelector("#container");
     container.style.display = "grid";
     container.style.width = `${containerSize}px`;
     container.style.height = `${containerSize}px`;
-    container.style.border = "3px solid black";
 
 const pixels = [];
 
 const clear = document.querySelector("#clear");
     clear.addEventListener("click", e => {
         pixels.forEach(p => p.style.backgroundColor = "#fff");
-        createGrid(prompt("Enter new grid size"));
     });
 
+const resize = document.querySelector("#resize");
+    resize.addEventListener("click", e => {
+        pixels.forEach(p => p.style.backgroundColor = "#fff");
+        createGrid(document.querySelector("#number").value);
+    });
 
 function createGrid (gridSize) {
 
@@ -41,7 +44,6 @@ function createGrid (gridSize) {
             let saturation = Math.ceil(Math.random()*10) + event.target.dataset.saturation;
             let light = 90 - event.target.dataset.darkness;
             
-            console.log(event.target.dataset.darkness);
             event.target.style.backgroundColor = `hsl(${hue}, ${saturation}%, ${light}%)`;
             event.target.dataset.darkness = Number(event.target.dataset.darkness) + 10;
             event.target.dataset.saturation = Number(event.target.dataset.saturation) + 10;

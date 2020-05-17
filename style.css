@@ -1,0 +1,45 @@
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    text-align: center;
+}
+
+h1 {
+    font-size: 1.5em;
+    color: hsl(40, 100%, 50%);
+}
+
+h2 {
+    font-size: 2em;
+}
+
+form * {
+    font-size: 1em;
+    border: none;
+    width: 6em;
+}
+
+form button {
+    background-color: hsl(40, 100%, 50%);
+}
+
+#clear {
+    margin-right: 2em;
+}
+
+#resize {
+    margin-right: 0em;
+}
+
+button:hover {
+    background-color: hsl(40, 50%, 80%);
+}
+
+#number {
+    background-color: hsl(40, 50%, 90%);
+    text-align: center;
+}
+
+#container {
+    margin: 2em auto;
+    border: 5px solid hsl(40, 100%, 50%);
+}
